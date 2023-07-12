@@ -4,6 +4,8 @@
  */
 package ec.edu.espol.proyecto1p;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Personal
@@ -18,6 +20,7 @@ public class Vehiculo {
     protected String color;
     protected String combustible;
     protected double precio;
+    protected ArrayList<Oferta> ofertas;
     
     public Vehiculo(String placa, String marca, String modelo, String tipoMotor, int año, double recorrido, String color, String combustible, double precio){
         this.placa = placa;
