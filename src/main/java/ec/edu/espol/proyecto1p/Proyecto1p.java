@@ -4,6 +4,8 @@
 
 package ec.edu.espol.proyecto1p;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Patricio Vásquez
@@ -11,6 +13,7 @@ package ec.edu.espol.proyecto1p;
 public class Proyecto1p {
 
     public static void main(String[] args) {
-        System.out.println("Hello Print!");
+        
+        
     }
 }

@@ -4,6 +4,8 @@
  */
 package ec.edu.espol.proyecto1p;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Personal
@@ -26,8 +28,12 @@ public class Persona {
         //Falta codigo
         return true;
     }
-    public boolean validarCorreo(String correo){
-        //Falta codigo
+    public boolean validarCorreo(String correo,ArrayList<Vendedor> vendedores){
+        for (Vendedor v: vendedores){
+            if(correo.toLowerCase().equals(v.correoElectronico.toLowerCase())){
+                return false;
+            }
+        }
         return true;
     }
 }

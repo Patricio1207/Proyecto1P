@@ -19,7 +19,7 @@ public class Vendedor extends Persona{
         this.vehiculos = new ArrayList<>();
     }
     
-    public Vendedor registrarVendedor(){
+    public Vendedor registrarVendedor(ArrayList<Vendedor> vendedores){
         Scanner sc = new Scanner(System.in);
         System.out.println("Se va a registrar un nuevo vendedor");
         System.out.println("Ingrese sus nombres");
@@ -32,7 +32,8 @@ public class Vendedor extends Persona{
         String cor = sc.nextLine();
         System.out.println("Ingrese la clave");
         String cla = sc.nextLine();
-        return new Vendedor(noms,apell,org,cor,cla);
+        if(new Vendedor(noms,apell,org,cor,cla).validarCorreo(cor,vendedores));
+            return new Vendedor(noms,apell,org,cor,cla);
         //Falta validar
         //Falta agregar al nuevo vendedor a la lista de vendedores
     }
