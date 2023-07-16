@@ -33,4 +33,54 @@ public class Vehiculo {
         this.combustible = combustible;
         this.precio = precio;
     }
+    
+    public static Vehiculo getVehiculo(String placa) {
+        for (Vehiculo vehi : Proyecto1p.vehiculos) {
+            if (placa.equals(vehi.placa)) {
+                return vehi;
+            }
+        }
+        return null;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getTipoMotor() {
+        return tipoMotor;
+    }
+
+    public int getAño() {
+        return año;
+    }
+
+    public double getRecorrido() {
+        return recorrido;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getCombustible() {
+        return combustible;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public ArrayList<Oferta> getOfertas() {
+        return ofertas;
+    }
+    
 }
