@@ -13,8 +13,12 @@ public class Auto extends Vehiculo {
     private String transmision;
     
     public Auto(String placa, String marca, String modelo, String tipoMotor, int año, double recorrido, String color, String combustible, double precio, String vidrios, String transmision){
-        super(placa,marca,modelo,tipoMotor,año,recorrido,color,combustible,precio);
+        super("A",placa,marca,modelo,tipoMotor,año,recorrido,color,combustible,precio);
         this.vidrios = vidrios;
         this.transmision = transmision;
+    }
+    @Override
+    public String toString() {
+        return super.toString() +"," + vidrios + "," + transmision;
     }
 }

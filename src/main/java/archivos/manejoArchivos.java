@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  *
- * @author wal26
+ * @author Personal
  */
 public class manejoArchivos {
     public static void EscribirArchivo(String nombreArchivo, String linea) {
