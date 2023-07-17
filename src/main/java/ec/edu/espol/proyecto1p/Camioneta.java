@@ -14,9 +14,13 @@ public class Camioneta extends Vehiculo {
     private String traccion;
     
     public Camioneta(String placa, String marca, String modelo, String tipoMotor, int año, double recorrido, String color, String combustible, double precio, String vidrios, String transmision, String traccion){
-        super(placa,marca,modelo,tipoMotor,año,recorrido,color,combustible,precio);
+        super("C",placa,marca,modelo,tipoMotor,año,recorrido,color,combustible,precio);
         this.vidrios = vidrios;
         this.transmision = transmision;
         this.traccion = traccion;
+    }
+    @Override
+    public String toString() {
+        return super.toString() + "," + vidrios + "," + transmision + "," + traccion;
     }
 }

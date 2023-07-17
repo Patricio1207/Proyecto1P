@@ -99,5 +99,104 @@ public class Comprador extends Persona {
                                               VEHICULOS
                            -----------------------------------------------------
                            """);
+        //Mostrar al usuario
+        for (int i = 0; i < vehic.size(); i++) {
+            System.out.println("Vehiculo" + (i + 1));
+            String tipoVeh = "";
+            if (vehic.get(i).getTipo().equals("A")) {
+                tipoVeh = "Auto";
+            } else if (vehic.get(i).getTipo().equals("C")) {
+                tipoVeh = "Camioneta";
+            } else {
+                tipoVeh = "Moto";
+            }
+
+            System.out.println("placa: " + vehic.get(i).getPlaca()
+                    + "\nModelo: " + vehic.get(i).getModelo()
+                    + "\nAño: " + vehic.get(i).getAño()
+                    + "\nRecordido: " + vehic.get(i).getRecorrido()
+                    + "\nPrecio: " + vehic.get(i).getPrecio()
+                    + "\nModelo: " + vehic.get(i).getModelo()
+                    + "\nTipo: " + tipo);
+
+            System.out.println("\nOpciones");
+
+            System.out.println("""
+                                   1. Retroceder
+                                   2. Avanzar
+                                   3. Ofertar
+                                   4. Salir
+                                   """);
+            
+            int opc = entrada.nextInt();
+            entrada.nextLine();
+            
+            while(opc > 5 || opc <= 0){
+                    System.out.println("Ingrese una opcion veridica");
+                    System.out.println("""
+                                   1. Retroceder
+                                   2. Avanzar
+                                   3. Ofertar
+                                   4. Salir
+                                   """);
+            
+                    opc = entrada.nextInt();
+                    entrada.nextLine();
+            }
+            
+            if(i == 0){
+                while(opc == 1){
+                    System.out.println("Lo siento ud se encuentra en el limte inferior de la lista");
+                    System.out.println("""
+                                   1. Retroceder
+                                   2. Avanzar
+                                   3. Ofertar
+                                   4. Salir
+                                   """);
+            
+                    opc = entrada.nextInt();
+                    entrada.nextLine();
+                }
+              
+            }
+            if(i == vehic.size()-1){
+                while(opc == 2){
+                    System.out.println("Lo siento ud se encuentra en el limte superior de la lista");
+                    System.out.println("""
+                                   1. Retroceder
+                                   2. Avanzar
+                                   3. Ofertar
+                                   4. Salir
+                                   """);
+            
+                    opc = entrada.nextInt();
+                    entrada.nextLine();
+                }
+                
+            }
+            
+            if(opc == 1){
+                i -=2;
+                continue;
+            }else if(opc ==2){
+                continue;
+            }
+            if(opc == 3){
+                //El usuario va a oferta
+                System.out.println("Indique su precio: ");
+                double precio = entrada.nextDouble();
+                
+                //se registra la oferta
+                Oferta oferta = new Oferta(this, precio, vehic.get(i));
+                oferta.add(); //Se añade la oferta al sistema
+                
+                System.out.println("La oferta se realizo con exito");
+            }
+            if(opc == 4){
+                return;
+            }
+            
+        }
+
     }
 }

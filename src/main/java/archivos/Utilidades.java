@@ -18,7 +18,7 @@ import javax.mail.internet.MimeMessage;
 
 /**
  *
- * @author wal26
+ * @author Personal
  */
 public class Utilidades {
     

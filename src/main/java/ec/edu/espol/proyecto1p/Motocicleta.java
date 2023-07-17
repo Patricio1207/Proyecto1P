@@ -10,6 +10,6 @@ package ec.edu.espol.proyecto1p;
  */
 public class Motocicleta extends Vehiculo{
     public Motocicleta(String placa, String marca, String modelo, String tipoMotor, int año, double recorrido, String color, String combustible, double precio){
-        super(placa,marca,modelo,tipoMotor,año,recorrido,color,combustible,precio);
+        super("M",placa,marca,modelo,tipoMotor,año,recorrido,color,combustible,precio);
     }
 }
