@@ -59,7 +59,7 @@ public class Comprador extends Persona {
             System.out.println("Lo siento, el usuario que ingreso, ya se encuentra registrado");
             return;
         }
-        
+        Proyecto1p.addComprador(new Comprador(noms, apell, org, cor, cla));
     }
 
     public void mostrarVehiculos() {
@@ -69,7 +69,10 @@ public class Comprador extends Persona {
         System.out.println("Buscar Vehiculos");
         System.out.println("Ingrese el tipo de vehiculo");
         String tipo = entrada.nextLine();
-
+        if (!tipo.equals("")) {
+            vehic = Vehiculo.filter(tipo, Proyecto1p.vehiculos);
+        }
+        
         System.out.println("Ingrese un recorrido");
         System.out.println("Limite inferirior ");
         double inicial = entrada.nextDouble();
@@ -77,7 +80,10 @@ public class Comprador extends Persona {
         System.out.println("Limite superior");
         double sup = entrada.nextDouble();
         entrada.nextLine();
-
+        if (inicial > 0 && sup > 0 && inicial <= sup) {
+            vehic = Vehiculo.filter(inicial, sup, vehic, "recorrido");
+        }
+        
         System.out.println("Ingrese un año");
         System.out.println("Limite inferirior ");
         int inicialA = entrada.nextInt();
@@ -85,7 +91,10 @@ public class Comprador extends Persona {
         System.out.println("Limite superior");
         int supA = entrada.nextInt();
         entrada.nextLine();
-
+        if (inicialA > 0 && supA > 0 && inicialA <= supA) {
+            vehic = Vehiculo.filter(inicialA, supA, vehic);
+        }
+        
         System.out.println("Ingrese un precio");
         System.out.println("Limite inferirior ");
         inicial = entrada.nextDouble();
@@ -93,7 +102,10 @@ public class Comprador extends Persona {
         System.out.println("Limite superior");
         sup = entrada.nextDouble();
         entrada.nextLine();
-
+        if (inicial > 0 && sup > 0 && inicial <= sup) {
+            vehic = Vehiculo.filter(inicial, sup, vehic, "precio");
+        }
+        
         System.out.println("""
                            -----------------------------------------------------
                                               VEHICULOS

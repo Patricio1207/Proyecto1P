@@ -39,19 +39,6 @@ public abstract class Persona {
     }
     
     
-    public boolean validarClave(String correo, String clave){
-        //Falta codigo
-        return true;
-    }
-    public boolean validarCorreo(String correo,ArrayList<Vendedor> vendedores){
-        for (Vendedor v: vendedores){
-            if(correo.toLowerCase().equals(v.correoElectronico.toLowerCase())){
-                return false;
-            }
-        }
-        return true;
-    }
-    
     public Persona login(){
         //Verificar que el usuario exista
         ArrayList<Persona> usuarios;
